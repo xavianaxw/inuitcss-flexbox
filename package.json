@@ -24,5 +24,13 @@
   "homepage": "https://github.com/xavianaxw/inuitcss-flexbox#readme",
   "dependencies": {
     "inuitcss": "^6.0.0-beta.4"
+  },
+  "devDependencies": {
+    "glob": "^7.1.2",
+    "mocha": "^3.4.2",
+    "node-sass": "^4.5.3",
+    "sass-true": "^3.0.0-beta.1",
+    "stylelint": "^7.11.1",
+    "stylelint-scss": "^1.4.4"
   }
 }
