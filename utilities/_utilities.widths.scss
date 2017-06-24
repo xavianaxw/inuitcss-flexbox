@@ -1,0 +1,67 @@
+// ==========================================================================||
+//  Overwrites inuitcss/utilities/widths as it will be used alongside o-flex
+//  instead of o-layout
+//
+//  Note: Should not be used alongside inuitcss's utilities.width
+//  Reference: https://github.com/inuitcss/inuitcss/blob/develop/utilities/_utilities.widths.scss
+// ==========================================================================||
+
+// Inherited from inuitcss
+$inuit-fractions: 1 2 3 4 5 !default;
+$inuit-offsets: false !default;
+$inuit-widths-delimiter: \/ !default;
+$inuit-widths-breakpoint-separator: \@ !default;
+
+// ==========================================================================||
+//  Mixin to spit out width classes similar to inuitcss except that
+//  u-push/u-pull is replaced with u-offset which its direction is influenced
+//  by o-flex's direction and if $inuit-offsets is set to true
+//
+//  e.g.
+//  <div class="u-1/2"></div>
+//  <div class="u-1/2 u-offset-1/2"></div>
+// ==========================================================================||
+
+@mixin inuit-flexwidths($fractions, $breakpoint:null) {
+  @each $denominator in $fractions {
+    @for $numerator from 1 through $denominator {
+
+      .u-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
+        flex: 0 0 ($numerator / $denominator) * 100% !important;
+        max-width: ($numerator / $denominator) * 100% !important;
+      }
+
+      @if ($inuit-offsets == true) {
+
+        .o-flex:not(.o-flex--reversed) .o-flex__item.u-offset-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
+          margin-left: ($numerator / $denominator) * 100% !important;
+        }
+
+        .o-flex.o-flex--reversed .o-flex__item.u-offset-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
+          margin-right: ($numerator / $denominator) * 100% !important;
+        }
+      }
+    }
+  }
+}
+
+@include inuit-flexwidths($inuit-fractions);
+
+// ==========================================================================||
+//  Similar to inuitcss utilities.widths, $mq-breakpoints defined allows
+//  you to do something like this for additional control via markup only
+//
+//  e.g.
+//  <div class="o-flex__item u-1/2@mobile"></div>
+//  <div class="o-flex__item u-1/3@tablet u-offset-1/3@tablet"></div>
+//  <div class="o-flex__item u-1/4@desktop"></div>
+//  <div class="o-flex__item u-1/5@wide u-offset-2/5@wide"></div>
+// ==========================================================================||
+
+@if (variable-exists(mq-breakpoints)) {
+  @each $bp-name, $bp-value in $mq-breakpoints {
+    @include mq($from: $bp-name) {
+      @include inuit-flexwidths($inuit-fractions, #{$inuit-widths-breakpoint-separator}#{$bp-name});
+    }
+  }
+}
