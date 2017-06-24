@@ -25,14 +25,12 @@ $inuit-widths-breakpoint-separator: \@ !default;
 @mixin inuit-flexwidths($fractions, $breakpoint:null) {
   @each $denominator in $fractions {
     @for $numerator from 1 through $denominator {
-
       .u-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
         flex: 0 0 ($numerator / $denominator) * 100% !important;
         max-width: ($numerator / $denominator) * 100% !important;
       }
 
       @if ($inuit-offsets == true) {
-
         .o-flex:not(.o-flex--reversed) .o-flex__item.u-offset-#{$numerator}#{$inuit-widths-delimiter}#{$denominator}#{$breakpoint} {
           margin-left: ($numerator / $denominator) * 100% !important;
         }
