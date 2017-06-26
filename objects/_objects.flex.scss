@@ -32,19 +32,6 @@
     flex: 0 0 100%;
     width: 100%;
   }
-
-  .o-wrapper--large-grids > & {
-    @include mq($from:desktop) {
-      margin-left: -$inuit-global-large-spacing-unit;
-    }
-
-    > .o-flex__item {
-      @include mq($from:desktop) {
-        margin-bottom: $inuit-global-large-spacing-unit;
-        padding-left: $inuit-global-large-spacing-unit;
-      }
-    }
-  }
 }
 
 // ==========================================================================||
@@ -190,18 +177,3 @@
   align-items: flex-end;
   justify-content: flex-end;
 }
-
-// ==========================================================================||
-//  Use margin-left/right -> auto should you want to align all items to a
-//  corner except one item
-//
-//  e.g. | .01 |                                          | .02 | .03 | .04 |
-//  .01 { margin-right: auto; } or .02 { margin-left: auto; }
-//
-//  e.g. | .01 | .02 |                                    | .03 | .04 | .05 |
-//  .02 { margin-right: auto; } or .03 { margin-left: auto; }
-// ==========================================================================||
-
-// ==========================================================================||
-//
-// ==========================================================================||
