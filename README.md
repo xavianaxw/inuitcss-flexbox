@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/xavianaxw/inuitcss-flexbox.svg?branch=master)](https://travis-ci.org/xavianaxw/inuitcss-flexbox)
+[![Build Status](https://travis-ci.org/xavianaxw/inuitcss-flexbox.svg?branch=master)](https://travis-ci.org/xavianaxw/inuitcss-flexbox) [![npm version](https://badge.fury.io/js/inuitcss-flexbox.svg)](https://badge.fury.io/js/inuitcss-flexbox)
 
 [Browser Support](https://caniuse.com/#search=flexbox)
 
