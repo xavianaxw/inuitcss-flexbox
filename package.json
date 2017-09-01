@@ -1,6 +1,6 @@
 {
   "name": "inuitcss-flexbox",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Enhancement to inuitcss using flexbox for the grid structure",
   "main": "index.js",
   "scripts": {
