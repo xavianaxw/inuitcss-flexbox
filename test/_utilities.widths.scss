@@ -1,7 +1,7 @@
 @import "true";
 @import "../utilities/utilities.widths";
 
-@include test-module("[mixin] flexwidths") {
+@include test-module("[mixin] inuit-flexwidths") {
   @include test("it should output fractional width classes for a given set of denominations") {
     @include assert() {
       @include output {
