@@ -193,7 +193,7 @@ Thus, by changing your settings.global configuration, it will directly affect `o
 | `o-flex--space-between` | Sets the following property `justify-content: space-between` |
 | `o-flex--space-around` | Sets the following property `justify-content: space-around` |
 
-### Mixins `v.0.0.6` onwards!
+## Mixins `v.0.0.6` onwards!
 
 [Direction](#directions)
 `@include inuit-flex-direction();`
