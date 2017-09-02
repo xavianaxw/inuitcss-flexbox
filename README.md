@@ -193,6 +193,39 @@ Thus, by changing your settings.global configuration, it will directly affect `o
 | `o-flex--space-between` | Sets the following property `justify-content: space-between` |
 | `o-flex--space-around` | Sets the following property `justify-content: space-around` |
 
+### Mixins `v.0.0.6` onwards!
+
+[Direction](#directions)
+`@include inuit-flex-direction();`
+
+[Position](#positioning)
+`@include inuit-flex-position();`
+
+[Wrapping](#wrapping)
+`@include inuit-flex-wrap();`
+
+[Spacing](#spacing)
+`@include inuit-flex-spacing();`
+
+**NOTE:** *Do not wrap values with singlequotes!*
+
+How to use?
+
+```scss
+.block {
+  @include inuit-flex-direction(row);
+  @include inuit-flex-position(lock-bottom);
+  @include inuit-flex-spacing(space-between);
+
+  // @include mq() is from 'sass-mq'. A package dependency in inuitcss by default
+  @include mq($from: tablet) {
+    @include inuit-flex-direction(row-reverse);
+    @include inuit-flex-position(lock-top-right);
+    @include inuit-flex-wrap(nowrap);
+  }
+}
+```
+
 ## Need More Examples?
 
 A page with more examples on how to use [inuitcss-flexbox](https://github.com/xavianaxw/inuitcss-flexbox) will be released soon. Stay tuned!
