@@ -1,0 +1,49 @@
+@import "true";
+@import "../tools/tools.flex";
+
+@include test-module("[mixin] inuit-flex-wrap") {
+  @include test("it should output value 'wrap' for flex-wrap") {
+    @include assert() {
+      @include output {
+        .output {
+          @include inuit-flex-wrap(wrap);
+        }
+      }
+      @include expect {
+        .output {
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+
+  @include test("it should output value 'wrap-reverse' for flex-wrap") {
+    @include assert() {
+      @include output {
+        .output {
+          @include inuit-flex-wrap(wrap-reverse);
+        }
+      }
+      @include expect {
+        .output {
+          flex-wrap: wrap-reverse;
+        }
+      }
+    }
+  }
+
+  @include test("it should output value 'nowrap' for flex-wrap") {
+    @include assert() {
+      @include output {
+        .output {
+          @include inuit-flex-wrap(nowrap);
+        }
+      }
+      @include expect {
+        .output {
+          flex-wrap: nowrap;
+        }
+      }
+    }
+  }
+}

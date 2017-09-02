@@ -1,0 +1,64 @@
+@import "true";
+@import "../tools/tools.flex";
+
+@include test-module("[mixin] inuit-flex-direction") {
+  @include test("it should output value 'row' for flex-direction") {
+    @include assert() {
+      @include output {
+        .output {
+          @include inuit-flex-direction(row);
+        }
+      }
+      @include expect {
+        .output {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+  
+  @include test("it should output value 'row-reverse' for flex-direction") {
+    @include assert() {
+      @include output {
+        .output {
+          @include inuit-flex-direction(row-reverse);
+        }
+      }
+      @include expect {
+        .output {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+
+  @include test("it should output value 'column' for flex-direction") {
+    @include assert() {
+      @include output {
+        .output {
+          @include inuit-flex-direction(column);
+        }
+      }
+      @include expect {
+        .output {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  @include test("it should output value 'column-reverse' for flex-direction") {
+    @include assert() {
+      @include output {
+        .output {
+          @include inuit-flex-direction(column-reverse);
+        }
+      }
+      @include expect {
+        .output {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+  }
+}

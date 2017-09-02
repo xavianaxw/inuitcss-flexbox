@@ -1,0 +1,34 @@
+@import "true";
+@import "../tools/tools.flex";
+
+@include test-module("[mixin] inuit-flex-spacing") {
+  @include test("it should output value 'space-between' for justify-content") {
+    @include assert() {
+      @include output {
+        .output {
+          @include inuit-flex-spacing(space-between);
+        }
+      }
+      @include expect {
+        .output {
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+
+  @include test("it should output value 'space-around' for justify-content") {
+    @include assert() {
+      @include output {
+        .output {
+          @include inuit-flex-spacing(space-around);
+        }
+      }
+      @include expect {
+        .output {
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+}
