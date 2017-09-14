@@ -51,7 +51,6 @@ Once you are done setting up your project with [inuitcss](https://github.com/inu
 @import 'settings/settings.global';
 
 // TOOLS
-@import 'tools/tools.rem';
 @import 'tools/tools.font-size';
 @import 'tools/tools.clearfix';
 @import 'tools/tools.hidden';
